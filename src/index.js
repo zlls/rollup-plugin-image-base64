@@ -24,16 +24,7 @@ export default function image ( options = {} ) {
 
 			const data = readFileSync( id, 'base64' );
 			const code = `var img = 'data:${mime};base64,${data}'; export default img;`;
-
-			const ast = {
-				type: 'Program',
-				sourceType: 'module',
-				start: 0,
-				end: null,
-				body: []
-			};
-
-			return { ast, code, map: { mappings: '' } };
+			return code;
 		}
 	};
 }
